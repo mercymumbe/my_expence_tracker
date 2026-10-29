@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+</head>
+<body>
+    <header>
+        <h1>Personal Finance</h1>
+    </header>
+    <main>
+        <div id="container">
+
+        </div>
+    </main>
+    <script>
+        let divcontainer = document.getElementById('container');
+        fetch('https://jsonplaceholder.typicode.com/posts')
+        .then(response => response.json())
+        .then(post =>{
+            post.forEach(post =>{
+               let postDiv=document.createElement('div');
+               postDiv.innerHTML = ` <h2>${post.title}</h2>, <p>${post.body}</p> `
+               divcontainer.appendChild(postDiv)
+            });
+        })
+    </script>
+</body>
+</html>
