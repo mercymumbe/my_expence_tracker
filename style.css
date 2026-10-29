@@ -54,3 +54,9 @@ header h1{
     min-height: 100px;
     
 }
+.form-grid {
+    display: grid;
+    grid-template-columns:1fr;
+    gap: 10px;
+    margin-bottom: 10px;
+}
