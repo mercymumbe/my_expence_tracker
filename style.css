@@ -54,9 +54,22 @@ header h1{
     min-height: 100px;
     
 }
+/* fields inputs section */
 .form-grid {
     display: grid;
-    grid-template-columns:1fr;
-    gap: 10px;
-    margin-bottom: 10px;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    background-color: rgb(122, 120, 120);
+    padding: 10px;
 }
+.form-card{
+     display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 3px;
+    background-color:rgb(56, 55, 55);
+}
+
+
