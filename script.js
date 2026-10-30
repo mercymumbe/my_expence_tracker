@@ -1,4 +1,4 @@
-// 1. xpense class (OOP)
+// 1. expense class (OOP)
 class expense {
     constructor(description, amount, category, date) {
         this.description = description;
@@ -12,3 +12,37 @@ class expense {
 
 console.log(item1.description)
 console.log(item2)
+
+// first object
+const my_expence={
+    description:"breakfast",
+    amount:200,
+    category: "food",
+    date:"30/10/2026"
+}
+// destructuring first object
+const{description,amount,category,date} = my_expence
+console.log(description);
+console.log(amount);
+console.log(category);
+console.log(date);
+
+// second object
+const my_expence2={
+    description:"travel",
+    amount:250,
+    category: "transport",
+    date:"30/10/2026"
+}
+// destructuring with new variable names
+const {
+    description: description2, 
+    amount:amount2,
+    category:category2,
+    date:date2
+}= my_expence2
+
+console.log(description2);
+console.log(amount2);
+console.log(category2);
+console.log(date2);
