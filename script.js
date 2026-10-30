@@ -7,42 +7,48 @@ class expense {
         this.date = date;
     }
 }
- item1= new expense("breakfast",200,"food","30/10/2026")
- item2= new expense("travel",250,"transport","30/10/2026")
+item1 = new expense("breakfast", 200, "food", "30/10/2026")
+item2 = new expense("travel", 250, "transport", "30/10/2026")
 
 console.log(item1.description)
 console.log(item2)
 
 // first object
-const my_expence={
-    description:"breakfast",
-    amount:200,
+const my_expence = {
+    description: "breakfast",
+    amount: 200,
     category: "food",
-    date:"30/10/2026"
+    date: "30/10/2026"
 }
 // destructuring first object
-const{description,amount,category,date} = my_expence
+const { description, amount, category, date } = my_expence
 console.log(description);
 console.log(amount);
 console.log(category);
 console.log(date);
 
 // second object
-const my_expence2={
-    description:"travel",
-    amount:250,
+const my_expence2 = {
+    description: "travel",
+    amount: 250,
     category: "transport",
-    date:"30/10/2026"
+    date: "30/10/2026"
 }
-// destructuring with new variable names
+// destructuring with second object
 const {
-    description: description2, 
-    amount:amount2,
-    category:category2,
-    date:date2
-}= my_expence2
+    description: description2,
+    amount: amount2,
+    category: category2,
+    date: date2
+} = my_expence2
 
 console.log(description2);
 console.log(amount2);
 console.log(category2);
 console.log(date2);
+
+// localStorage
+localStorage.setItem(
+    "expenses",
+    JSON.stringify(this.expenses)
+);
