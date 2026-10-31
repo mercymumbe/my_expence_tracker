@@ -70,11 +70,34 @@
                     <button type="submit" class="btn"> + Add Expense</button>
                 </div>
                 <!-- will be displayed by javascript -->
-                <ul id="formMessage"></ul>
+                <p id="formMessage"></p>
 
             </form>
 
         </section>
+        <!-- Expense record section -->
+        <section class="panel">
+            <div class="section-heading">
+                <h2>Expense records</h2>
+
+                <button id="clearFilter" class="btn"
+                        type="button">
+                    Reset filters
+                </button>
+            </div>
+             <div class="form-group">
+                    <label for="filterCategory">Filter by category</label>
+                    <select id="filterCategory">
+                        <option value="All">All categories</option>
+                        <option value="Food">Food</option>
+                        <option value="Transport">Transport</option>
+                        <option value="Shopping">Shopping</option>
+                        <option value="Bills">Bills</option>
+                        <option value="Health">Health</option>
+                        <option value="Education">Education</option>
+                        <option value="Entertainment">Entertainment</option>
+                        <option value="Other">Other</option>
+                    </select>
     </main>
 
             <script src="script.js"></script>
