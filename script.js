@@ -47,8 +47,10 @@ console.log(amount2);
 console.log(category2);
 console.log(date2);
 
-// localStorage
-localStorage.setItem(
-    "expenses",
-    JSON.stringify(this.expenses)
-);
+// cookies
+
+const expiryDate = new Date("2030-03-05T12:00:00Z");
+
+document.cookie = `webName=myexpencetracker; expires=${expiryDate.toUTCString()}; path=/`;
+
+console.log(document.cookie);
