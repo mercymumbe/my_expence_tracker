@@ -1,4 +1,27 @@
-// 1. expense class (OOP)
+const expenseForm = document.getElementById("expenseForm");
+const descriptionInput = document.getElementById("description");
+const amountInput = document.getElementById("amount");
+const categoryInput = document.getElementById("category");
+const dateInput = document.getElementById("expenseDate");
+
+// Get today's date
+function today() {
+    const now = new Date();
+    const year = getFullYear();
+    const month = (now.getMonth() + 1).padStart(2, "0");
+    const day = (now.getDate()).padStart(2, "0");
+
+    return `${year}-${month}-${day}`;
+}
+
+// Format amounts in Kenyan shillings
+function formatMoney(amount) {
+    return `KSh ${amount.toLocaleString("en-KE", {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+    })}`;
+}
+//  expense class (OOP)
 class expense {
     constructor(description, amount, category, date) {
         this.description = description;
@@ -7,12 +30,34 @@ class expense {
         this.date = date;
     }
 }
-item1 = new expense("breakfast", 200, "food", "30/10/2026")
-item2 = new expense("travel", 250, "transport", "30/10/2026")
 
-console.log(item1.description)
-console.log(item2)
+// 3. ExpenseTracker class (OOP)
+class ExpenseTracker {
+    constructor() {
+        // Load saved expenses
+        try {
+            this.expenses = JSON.parse(
+                localStorage.getItem("expenses")
+            ) || [];
+        } catch {
+            this.expenses = [];
+        }
+    }
 
+    // Save expenses
+    saveExpenses() {
+        localStorage.setItem(
+            "expenses",
+            JSON.stringify(this.expenses)
+        );
+    }
+}
+
+ // Add one expense
+    addExpense(expense) {
+        this.expenses = [...this.expenses, expense];
+        this.saveExpenses();
+    }
 // first object
 const my_expence = {
     description: "breakfast",
@@ -20,6 +65,21 @@ const my_expence = {
     category: "food",
     date: "30/10/2026"
 }
+
+//  ExpenseTracker class (OOP)
+class ExpenseTracker {
+    constructor() {
+        // Load saved expenses
+        try {
+            this.expenses = JSON.parse(
+                localStorage.getItem("expenses")
+            ) || [];
+        } catch {
+            this.expenses = [];
+        }
+    }
+}
+
 // destructuring first object
 const { description, amount, category, date } = my_expence
 console.log(description);
