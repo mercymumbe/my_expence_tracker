@@ -7,12 +7,15 @@ const dateInput = document.getElementById("expenseDate");
 // Get today's date
 function today() {
     const now = new Date();
-    const year = getFullYear();
-    const month = (now.getMonth() + 1).padStart(2, "0");
-    const day = (now.getDate()).padStart(2, "0");
+
+    const year = now.getFullYear();
+    const month = `$(now.getMonth() + 1)`.padStart(2, "0");
+    const day = `$(now.getDate())`.padStart(2, "0");
 
     return `${year}-${month}-${day}`;
 }
+
+console.log(today());
 
 // Format amounts in Kenyan shillings
 function formatMoney(amount) {
@@ -32,9 +35,8 @@ class expense {
 }
 
 // 3. ExpenseTracker class (OOP)
-class ExpenseTracker {
+class expenseTracker {
     constructor() {
-        // Load saved expenses
         try {
             this.expenses = JSON.parse(
                 localStorage.getItem("expenses")
@@ -43,15 +45,15 @@ class ExpenseTracker {
             this.expenses = [];
         }
     }
+}
 
-    // Save expenses
+   // Save expenses in the browser
     saveExpenses() {
         localStorage.setItem(
             "expenses",
             JSON.stringify(this.expenses)
         );
     }
-}
 
  // Add one expense
     addExpense(expense) {
