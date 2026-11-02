@@ -33,7 +33,7 @@ class expense {
         this.date = date;
     }
 }
-
+// expencetracker (OOP)
 class ExpenseTracker {
     constructor() {
         this.expenses = JSON.parse(
@@ -61,10 +61,10 @@ class ExpenseTracker {
         this.saveExpenses();
     }
 
-    // Delete an expense by ID
-    deleteExpense(id) {
+    // Delete an expense 
+    deleteExpense(description) {
         this.expenses = this.expenses.filter(
-            expense => expense.id !== id
+            expense => expense.description !== description
         );
 
         this.saveExpenses();
@@ -74,6 +74,29 @@ class ExpenseTracker {
 // Create the tracker
 const tracker = new ExpenseTracker();
 
+const expenseList = document.getElementById("expenseList");
+const totalExpenses = document.getElementById("totalExpenses");
+
+// Display expenses in the recorder
+function displayExpenses() {
+    expenseList.innerHTML = "";
+
+    tracker.expenses.forEach((item) => {
+        const row = document.createElement("div");
+
+        row.textContent =
+            `${item.description} - ${formatMoney(item.amount)} - ` +
+            `${item.category} - ${item.date}`;
+
+        expenseList.appendChild(row);
+    });
+     const total = tracker.expenses.reduce(
+        (sum, item) => sum + Number(item.amount),
+        0
+    );
+
+    totalExpenses.textContent = formatMoney(total);
+}
 // Create expense objects
 const expense1 = {
     description: "Breakfast",
@@ -83,6 +106,7 @@ const expense1 = {
 };
 
 const expense2 = {
+
     description: "Travel",
     amount: 250,
     category: "Transport",
