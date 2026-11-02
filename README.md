@@ -53,7 +53,9 @@ Click Save.
 Wait a few minutes for the website to be published.
 
 ## Screenshots
-
+![image one](images/screenshot1.png)
+![image two](images/screenshot2.png)
+![image three](images/screenshot3.png)
 
 ## Author
 
