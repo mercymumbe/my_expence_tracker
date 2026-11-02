@@ -4,6 +4,12 @@ const amountInput = document.getElementById("amount");
 const categoryInput = document.getElementById("category");
 const dateInput = document.getElementById("expenseDate");
 
+const overallTotal = document.getElementById("overallTotal");
+const todayTotal = document.getElementById("todayTotal");
+const formMessage = document.getElementById("formMessage");
+const clearFilter = document.getElementById("clearFilter");
+const filterCategory = document.getElementById("filterCategory");
+
 // Get today's date
 function today() {
     const now = new Date();
