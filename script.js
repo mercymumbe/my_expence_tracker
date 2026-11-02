@@ -9,8 +9,8 @@ function today() {
     const now = new Date();
 
     const year = now.getFullYear();
-    const month = `$(now.getMonth() + 1)`.padStart(2, "0");
-    const day = `$(now.getDate())`.padStart(2, "0");
+    const month = `${now.getMonth() + 1}`.padStart(2, "0");
+    const day = `${now.getDate()}`.padStart(2, "0");
 
     return `${year}-${month}-${day}`;
 }
@@ -34,20 +34,14 @@ class expense {
     }
 }
 
-// 3. ExpenseTracker class (OOP)
-class expenseTracker {
+class ExpenseTracker {
     constructor() {
-        try {
-            this.expenses = JSON.parse(
-                localStorage.getItem("expenses")
-            ) || [];
-        } catch {
-            this.expenses = [];
-        }
+        this.expenses = JSON.parse(
+            localStorage.getItem("expenses")
+        ) || [];
     }
-}
 
-   // Save expenses in the browser
+    // Save expenses in the browser
     saveExpenses() {
         localStorage.setItem(
             "expenses",
@@ -55,59 +49,65 @@ class expenseTracker {
         );
     }
 
- // Add one expense
+    // Add one expense
     addExpense(expense) {
         this.expenses = [...this.expenses, expense];
         this.saveExpenses();
     }
-// first object
-const my_expence = {
-    description: "breakfast",
-    amount: 200,
-    category: "food",
-    date: "30/10/2026"
-}
 
-//  ExpenseTracker class (OOP)
-class ExpenseTracker {
-    constructor() {
-        // Load saved expenses
-        try {
-            this.expenses = JSON.parse(
-                localStorage.getItem("expenses")
-            ) || [];
-        } catch {
-            this.expenses = [];
-        }
+    // Add many expenses using the rest operator
+    addExpenses(...expenses) {
+        this.expenses = [...this.expenses, ...expenses];
+        this.saveExpenses();
+    }
+
+    // Delete an expense by ID
+    deleteExpense(id) {
+        this.expenses = this.expenses.filter(
+            expense => expense.id !== id
+        );
+
+        this.saveExpenses();
     }
 }
 
-// destructuring first object
-const { description, amount, category, date } = my_expence
-console.log(description);
-console.log(amount);
-console.log(category);
-console.log(date);
+// Create the tracker
+const tracker = new ExpenseTracker();
 
-// second object
-const my_expence2 = {
-    description: "travel",
+// Create expense objects
+const expense1 = {
+    description: "Breakfast",
+    amount: 200,
+    category: "Food",
+    date: "2026-10-30"
+};
+
+const expense2 = {
+    description: "Travel",
     amount: 250,
-    category: "transport",
-    date: "30/10/2026"
-}
-// destructuring with second object
-const {
-    description: description2,
-    amount: amount2,
-    category: category2,
-    date: date2
-} = my_expence2
+    category: "Transport",
+    date: "2026-10-30"
+};
 
-console.log(description2);
-console.log(amount2);
-console.log(category2);
-console.log(date2);
+// Add one expense
+tracker.addExpense(expense1);
+
+// Add multiple expenses
+tracker.addExpenses(
+    expense3,{
+        description: "Lunch",
+        amount: 300,
+        category: "Food",
+        date: "2026-10-30"
+    }
+);
+
+console.log(tracker.expenses);
+
+// Delete an expense
+// tracker.deleteExpense(1);
+// destructuring with second object
+
 
 // cookies
 
