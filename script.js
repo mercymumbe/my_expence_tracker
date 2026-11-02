@@ -97,21 +97,6 @@ function displayExpenses() {
 
     totalExpenses.textContent = formatMoney(total);
 }
-// Create expense objects
-const expense1 = {
-    description: "Breakfast",
-    amount: 200,
-    category: "Food",
-    date: "2026-10-30"
-};
-
-const expense2 = {
-
-    description: "Travel",
-    amount: 250,
-    category: "Transport",
-    date: "2026-10-30"
-};
 
 // Add one expense
 tracker.addExpense(expense1);
