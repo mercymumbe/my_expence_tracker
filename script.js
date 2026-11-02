@@ -101,7 +101,36 @@ function displayExpenses() {
 // Set the date field to today's date
 dateInput.value = today();
 
-/
+// Listen for the form submission
+expenseForm.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    // Get the details entered by the user
+    const description = descriptionInput.value.trim();
+    const amount = Number(amountInput.value);
+    const category = categoryInput.value;
+    const date = dateInput.value;
+
+
+
+    // Create a new expense
+    const newExpense = new expense(
+        description,
+        amount,
+        category,
+        date
+    );
+
+    // Save the expense
+    tracker.addExpense(newExpense);
+
+    // Display the updated expenses
+    displayExpenses();
+
+    // Clear the form
+    expenseForm.reset();
+    dateInput.value = today();
+});
 
 // Display previously saved expenses
 displayExpenses();
