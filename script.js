@@ -98,25 +98,13 @@ function displayExpenses() {
     totalExpenses.textContent = formatMoney(total);
 }
 
-// Add one expense
-tracker.addExpense(expense1);
+// Set the date field to today's date
+dateInput.value = today();
 
-// Add multiple expenses
-tracker.addExpenses(
-    expense3,{
-        description: "Lunch",
-        amount: 300,
-        category: "Food",
-        date: "2026-10-30"
-    }
-);
+/
 
-console.log(tracker.expenses);
-
-// Delete an expense
-// tracker.deleteExpense(1);
-// destructuring with second object
-
+// Display previously saved expenses
+displayExpenses();
 
 // cookies
 
