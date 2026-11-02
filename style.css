@@ -112,6 +112,15 @@ input {
 
 }
 
+#expenseList{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+     border-radius: 10px;
+    height: 50px;
+    
+
+}
+
 #filterCategory {
     border-radius: 10px;
     height: 50px;
