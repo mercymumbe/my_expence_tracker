@@ -133,6 +133,9 @@ expenseForm.addEventListener("submit", function(event) {
     // Display the updated expenses
     displayExpenses();
 
+     // Show a message
+    formMessage.textContent = "Expense added successfully!";
+    
     // Clear the form
     expenseForm.reset();
     dateInput.value = today();
