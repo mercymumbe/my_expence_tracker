@@ -110,4 +110,11 @@ input {
     background-color: orange;
     
 }
+#filterCategory{
+    border-radius: 10px;
+    height: 50px;
+    background-color: rgb(56, 55, 55);
+    color: whitesmoke;
+    box-shadow: 0 4px 8px orange;
+    ;
 }
