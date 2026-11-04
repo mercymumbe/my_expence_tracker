@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/mercymumbe/my_expence_tracker/issues"
   },
-  "homepage": "https://github.com/mercymumbe/my_expence_tracker#readme"
+  "homepage": "https://github.com/mercymumbe/my_expence_tracker#readme",
+  "devDependencies": {
+    "jest": "^30.5.2"
+  }
 }
