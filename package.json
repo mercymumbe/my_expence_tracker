@@ -4,7 +4,7 @@
   "description": "This is a website for expense traker.\r The company provides away that an user may track their daily expense.",
   "main": "script.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
