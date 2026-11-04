@@ -27,7 +27,7 @@ JavaScript – Adds functionality and manages expense records.
 Local Storage – Saves expense data in the browser.
 
 ## Project Structure
-![image of project structure]()
+![image of project structure](images/project_stucture.png)
 
 ## Setup Instructions
 
